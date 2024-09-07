@@ -7,8 +7,10 @@
 body{
     width: 100%;
     height: 100vh;
-    background: #001e2b ;
-
+    background: #121212 ;
+}
+section{
+    background-color: #121212   ;
 }
 
 .header{
@@ -21,7 +23,8 @@ body{
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: #00ed64;
+    background: #d9ed00;
+    padding-right: 40px;
 }
 .logo{
     background: transparent;
@@ -30,8 +33,12 @@ body{
     color: black;
     text-decoration: none;
     font-weight: 600;
+    animation: slideFromTopLeft 0.5s ease-out forwards;
+
 }
 .navbar{
+    animation: slideFromTop 0.6s ease-out forwards;
+
         background: transparent;
 }
 .navbar a{
@@ -54,29 +61,56 @@ body{
     display: flex;
     align-items: center;
     margin: 20px;
+    animation: dropIn 0.8s ease-out forwards;
+
 }
 
 .home-content{
+    height: 70%;
+    width: 50%;
     margin-right: 10%;
     color: white;
-    font-size: 20px;
-    
+    font-size: 18px;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    font-weight: 100;
+    animation: slideFromLeft 1s ease-out forwards;
+
+}
+.home-description{
+    font-family: 'poppins', 'sans-serief';    
+    margin-top: 25px;
+}
+
+.name{
+    color: #d9ed00;
+    border-bottom: 2px solid #d9ed00;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 img{
     height: 350px;
     width: 350px;
-    border: 2px solid rgb(7, 153, 72);
+    border: 2px solid #0ef;
     border-radius: 50%;
-    box-shadow: 10px 10px 20px #ffc010;}
+    animation: slideFromRight 1s ease-out forwards;
+
+}
 
 .socialinks{
-    position: relative;
-    bottom: 210px;
-    left: 40px;
+    margin-top: 25px;
     height: 100px;
     width: 100px;
     font-size: 30px;
+}
+span{
+    color: #0ef;
+    border-bottom: 2px solid #0ef;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 700;
 }
 
 .about_me{
@@ -87,12 +121,11 @@ img{
     align-items: center;
     color: white;
     padding: 20px;
+    animation: zoomIn 1s ease-out forwards;
+
 }
 
-.outerbox{
-    position: relative;
-    top: 100px;
-}
+
 
 .paragraph_box h2{
     color: #0ef;
@@ -106,76 +139,294 @@ img{
 }
 
 .paragraph_box{
-    height: 300px;
+    height: 600px;
     width: 700px;
     margin-left: 20px;
-    padding: 20px;
+    padding: 30px;
     line-height: 30px;
-}
+    background-color: #1a1a1a;
+    border-radius: 15px;}
 
-section{
-
+.myskills {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
+    padding: 20px;
+    background-color: #121212;
+    color: white;
 }
 
-.container1{
+.container1 {
     width: 600px;
-    height: 500px;
-    padding: 75px 90px;
-    margin-left: 120px;
-}
-
-.heading1{
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-thickness:5px;
-    margin-bottom:50px;
-}
-.bar{
-    font-size: 23px;
-}
-
-.technical-bars .bar{
-    margin-top: 40px 0px;
-}
-.technical-bars .bar:first-child{
-    margin-bottom: 0px;
-}
-.technical-bars .bar:last-child{
-    margin-bottom: 0px;
-}
-.technical-bars .bar .info{
-    margin-bottom: 5px;
-}
-.technical-bars .bar .info span{
-    font-size: 20px;
-    color: #0ef;
-    font-weight: 500;
-}
-.technical-bars .bar .progress-line{
-    position: relative;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    background-color: #1a1a1a;
     border-radius: 10px;
-    width: 100px;
-    height: 5px;
-    background-color: black;
-    animation: animate 1s cubic-bezier(1,0,0,5,1), forwards;
-    transform: scaleX();
-    transform-origin:left;
 }
 
-@keyframes animate {
-    100%{
-        transform: scaleX(1);
-    }
+.heading1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #fff;
+    border-bottom: 2px solid #0ef;
+    display: inline-block;
+    padding-bottom: 10px;
 }
-.technical-bars .bar .progress-line span{
+
+.bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.bar i {
+    font-size: 30px;
+    color: #0ef;
+    margin-right: 10px;
+}
+
+.technical-bars .bar .info span {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    margin-right: 20px;
+}
+
+.technical-bars .bar .progress-line {
+    position: relative;
+    flex-grow: 1;
+    height: 5px;
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.technical-bars .bar .progress-line span {
+    display: block;
     height: 100%;
     background-color: #0ef;
-    position: absolute;
-    border-radius: 10px;
-    animation: animate 1s 1s cubic-bezier(1,0,0,5,1) forwards;
-    transform: scaleX(0);
-    transform-origin: left;
+    border-radius: 5px;
+    width: 0%;
+    animation: load 2s forwards;
+    position: relative;
 }
 
+.technical-bars .bar .progress-line span::after {
+    content: attr(data-percent);
+    position: absolute;
+    right: -40px;
+    top: -10px;
+    background-color: #000;
+    color: #0ef;
+    padding: 2px 5px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+
+/* Animations */
+@keyframes load {
+    100% {
+        width: var(--progress-width);
+    }
+}
+
+.progress-line.html span {
+    --progress-width: 90%;
+}
+
+.progress-line.css span {
+    --progress-width: 80%;
+}
+
+.progress-line.javascript span {
+    --progress-width: 50%;
+}
+
+.progress-line.java span {
+    --progress-width: 60%;
+}
+
+.progress-line.sql span {
+    --progress-width: 70%;
+}
+
+.progress-line.php span {
+    --progress-width: 50%;
+}
+
+.progress-line.react span {
+    --progress-width: 0%;
+}
+
+/* Projects Section */
+.myprojects {
+    padding: 50px;
+    background-color: #121212;
+    color: white;
+    animation: dropIn 0.8s ease-out forwards;
+
+}
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #0ef;
+    text-align: center;
+}
+
+.project-description {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ddd;
+    text-align: justify;
+}
+
+.project-tech {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.project-tech span {
+    background-color: #d9ed00;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.project-link {
+    display: inline-block;
+    background-color: #d9ed00;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #fff;
+}
+
+@keyframes slideFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes slideFromTopLeft {
+    0% {
+        transform: translate(-100%, -100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes slideRotateTopRight {
+    0% {
+        transform: translate(100%, -100%) rotate(360deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) rotate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes dropIn {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    80% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
